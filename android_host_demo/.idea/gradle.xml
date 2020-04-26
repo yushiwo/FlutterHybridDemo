@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -12,7 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/../flutter_module" />
             <option value="$PROJECT_DIR$/../flutter_module/.android/Flutter" />
-            <option value="$USER_HOME$/Documents/flutter/.pub-cache/git/flutter_boost-69a752f870253bec15413b2a85f6577edf1b4b93/android" />
+            <option value="$PROJECT_DIR$/../../../../flutter/.pub-cache/git/flutter_boost-69a752f870253bec15413b2a85f6577edf1b4b93/android" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
