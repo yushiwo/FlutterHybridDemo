@@ -4,8 +4,43 @@ import 'package:flutter/material.dart';
 import 'package:flutter_boost/container/boost_container.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 
-class FirstRouteWidget extends StatelessWidget {
+import 'dart:async';
+
+import 'package:flutter/services.dart';
+
+
+class FirstRouteWidget extends StatefulWidget {
+//  static const KEY_FLUTTER_BOOST_FIRST_ROUTE = "flutterbus://flutterWidget_FirstPage";
+//  @override
+//  Widget build(BuildContext context) {
+//    return Scaffold(
+//      appBar: AppBar(
+//        title: Text('First Route'),
+//      ),
+//      body: Center(
+//        child: RaisedButton(
+//          child: Text('open amap widget'),
+//          onPressed: () {
+//            FlutterBoost.singleton.open("flutterbus://flutternativePage", urlParams: {"test": "flutter to flutter "})
+//                .then((Map value) {print(
+//                "call me when page is finished. did recieve second route result $value");});
+//          },
+//        ),
+//      ),
+//    );
+//  }
+
+  @override
+  State<StatefulWidget> createState() {
+    return _MyFirstRouteState();
+  }
+}
+
+class _MyFirstRouteState extends State<FirstRouteWidget> {
+
   static const KEY_FLUTTER_BOOST_FIRST_ROUTE = "flutterbus://flutterWidget_FirstPage";
+
+  static const nativeChannel = const MethodChannel('com.example.flutter/native');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,12 +51,10 @@ class FirstRouteWidget extends StatelessWidget {
         child: RaisedButton(
           child: Text('open amap widget'),
           onPressed: () {
-//            print("open second page!");
+            nativeChannel.invokeMethod('test');
             FlutterBoost.singleton.open("flutterbus://flutternativePage", urlParams: {"test": "flutter to flutter "})
                 .then((Map value) {print(
                 "call me when page is finished. did recieve second route result $value");});
-//            BoostContainerSettings settings = BoostContainer.of(context).settings;
-//            FlutterBoost.singleton.close(settings.uniqueId, result: {"result": "data from second"});
           },
         ),
       ),

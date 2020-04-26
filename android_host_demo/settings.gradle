@@ -1,4 +1,4 @@
-rootProject.name='android_host_demo'
+  rootProject.name='android_host_demo'
 include ':app'
 setBinding(new Binding([gradle: this]))
 evaluate(new File(
@@ -8,3 +8,4 @@ evaluate(new File(
 
 include ':flutter_module'
 project(':flutter_module').projectDir = new File('../flutter_module')
+include ':demolib'

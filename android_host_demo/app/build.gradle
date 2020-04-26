@@ -38,4 +38,5 @@ dependencies {
     implementation project(path: ':flutter')
 
     implementation project(':flutter_boost')
+    implementation project(':demolib')
 }
